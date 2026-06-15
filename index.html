@@ -61,6 +61,21 @@
         linear-gradient(90deg,rgba(25,242,106,.035) 1px,transparent 1px);
       background-size:42px 42px;
       mask-image:radial-gradient(circle at center,#000 0%,transparent 68%);
+      animation:gridDrift 18s linear infinite;
+    }
+    body::after{
+      content:"";
+      position:fixed;
+      width:280px;
+      height:280px;
+      right:-90px;
+      top:18%;
+      z-index:-1;
+      pointer-events:none;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(25,242,106,.2),transparent 64%);
+      filter:blur(6px);
+      animation:ambientPulse 7s ease-in-out infinite;
     }
     img{display:block;max-width:100%}
     a{color:inherit;text-decoration:none}
@@ -123,6 +138,7 @@
       font-weight:900;
       text-transform:uppercase;
       margin-bottom:18px;
+      animation:badgePulse 2.8s ease-in-out infinite;
     }
     h1{
       font-size:clamp(2.25rem,5vw,4.8rem);
@@ -182,6 +198,8 @@
       font-size:clamp(2.5rem,6vw,4.2rem);
       font-weight:900;
       line-height:1;
+      text-shadow:0 0 22px rgba(25,242,106,.34);
+      animation:pricePulse 2.8s ease-in-out infinite;
     }
     .cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
     .btn{
@@ -200,6 +218,7 @@
       position:relative;
       overflow:hidden;
       isolation:isolate;
+      animation:ctaPulse 2.9s ease-in-out infinite;
     }
     .btn::before{
       content:"";
@@ -220,6 +239,7 @@
       background:#07100b;
       box-shadow:var(--shadow);
       transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+      animation:floatHero 5.8s ease-in-out infinite;
     }
     .hero-image:hover,.product:hover{transform:translateY(-4px);border-color:rgba(25,242,106,.5);box-shadow:0 28px 80px rgba(0,0,0,.48)}
     .hero-image img{width:100%;height:auto}
@@ -239,7 +259,13 @@
       text-align:center;
       font-size:.93rem;
       transition:transform .2s ease,border-color .2s ease,background .2s ease;
+      animation:riseIn .6s ease both;
     }
+    .benefit:nth-child(2){animation-delay:.06s}
+    .benefit:nth-child(3){animation-delay:.12s}
+    .benefit:nth-child(4){animation-delay:.18s}
+    .benefit:nth-child(5){animation-delay:.24s}
+    .benefit:nth-child(6){animation-delay:.3s}
     .benefit:hover{transform:translateY(-3px);border-color:rgba(25,242,106,.55);background:rgba(25,242,106,.1)}
     .section{padding:34px 0}
     .split{
@@ -307,7 +333,11 @@
       background:rgba(25,242,106,.08);
       padding:14px;
       transition:transform .2s ease,border-color .2s ease,background .2s ease;
+      animation:riseIn .7s ease both;
     }
+    .receive-card:nth-child(2){animation-delay:.08s}
+    .receive-card:nth-child(3){animation-delay:.16s}
+    .receive-card:nth-child(4){animation-delay:.24s}
     .receive-card:hover{transform:translateY(-3px);border-color:rgba(25,242,106,.5);background:rgba(25,242,106,.12)}
     .receive-card h3{
       color:var(--green);
@@ -398,6 +428,34 @@
       0%,62%{transform:translateX(-100%)}
       100%{transform:translateX(100%)}
     }
+    @keyframes ctaPulse{
+      0%,100%{box-shadow:0 14px 35px rgba(25,242,106,.24)}
+      50%{box-shadow:0 18px 48px rgba(25,242,106,.44)}
+    }
+    @keyframes pricePulse{
+      0%,100%{transform:scale(1);text-shadow:0 0 22px rgba(25,242,106,.34)}
+      50%{transform:scale(1.035);text-shadow:0 0 34px rgba(25,242,106,.58)}
+    }
+    @keyframes badgePulse{
+      0%,100%{box-shadow:0 0 0 rgba(25,242,106,0)}
+      50%{box-shadow:0 0 28px rgba(25,242,106,.24)}
+    }
+    @keyframes floatHero{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-8px)}
+    }
+    @keyframes riseIn{
+      from{opacity:0;transform:translateY(12px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+    @keyframes gridDrift{
+      from{background-position:0 0,0 0}
+      to{background-position:42px 42px,42px 42px}
+    }
+    @keyframes ambientPulse{
+      0%,100%{opacity:.45;transform:scale(1)}
+      50%{opacity:.82;transform:scale(1.18)}
+    }
     @media (max-width:900px){
       .hero-grid,.split{grid-template-columns:1fr}
       .hero{padding-top:28px}
@@ -450,6 +508,7 @@
       .hero-image{
         border-radius:7px;
         box-shadow:0 14px 38px rgba(0,0,0,.3);
+        animation-duration:7s;
       }
       .benefits{
         grid-template-columns:repeat(2,1fr);
