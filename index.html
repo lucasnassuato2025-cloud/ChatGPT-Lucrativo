@@ -8,6 +8,7 @@
   <meta property="og:title" content="ChatGPT Lucrativo - Promocao de Copa" />
   <meta property="og:description" content="Curso completo de IA por apenas R$ 29,00. Acesso imediato." />
   <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
   <!-- Meta Pixel Code -->
   <script>
@@ -173,6 +174,7 @@
       box-shadow:0 14px 35px rgba(25,242,106,.24);
       transition:transform .2s ease,box-shadow .2s ease;
     }
+    .btn:active{transform:scale(.98)}
     .btn:hover{transform:translateY(-2px);box-shadow:0 18px 45px rgba(25,242,106,.34)}
     .secure{color:var(--muted);font-size:.92rem}
     .hero-image{
@@ -297,15 +299,90 @@
       .hero-grid,.split{grid-template-columns:1fr}
       .hero{padding-top:28px}
       .benefits{grid-template-columns:repeat(2,1fr)}
-      .hero-image{order:-1}
     }
     @media (max-width:560px){
       .wrap{width:min(100% - 22px,1120px)}
-      .nav{align-items:flex-start}
+      body{
+        background:
+          radial-gradient(circle at 50% 0%,rgba(25,242,106,.2),transparent 32%),
+          linear-gradient(180deg,#020403 0%,#06100b 55%,#020403 100%);
+      }
+      .topbar{position:sticky}
+      .nav{align-items:center;padding:10px 0}
+      .brand{font-size:.86rem}
       .nav-price{font-size:.78rem}
+      .hero{padding:18px 0 18px}
+      .hero-grid{gap:16px}
+      .eyebrow{
+        font-size:.74rem;
+        padding:7px 10px;
+        margin-bottom:12px;
+      }
+      h1{
+        font-size:clamp(2rem,12vw,3.05rem);
+        line-height:.94;
+      }
+      .sub{
+        font-size:.98rem;
+        margin:12px 0 14px;
+      }
       .price-card,.content-panel,.final-box{padding:18px}
-      .benefits{grid-template-columns:1fr}
+      .price-card{
+        border-color:rgba(25,242,106,.45);
+        box-shadow:0 18px 45px rgba(0,0,0,.3);
+      }
+      .price-label{font-size:.82rem}
+      .price{
+        gap:8px;
+        margin-bottom:12px;
+      }
+      .old{font-size:1rem}
+      .new{font-size:3.45rem}
+      .cta-row{gap:9px}
+      .secure{
+        width:100%;
+        text-align:center;
+        font-size:.86rem;
+      }
+      .hero-image{
+        border-radius:7px;
+        box-shadow:0 14px 38px rgba(0,0,0,.3);
+      }
+      .benefits{
+        grid-template-columns:repeat(2,1fr);
+        gap:8px;
+        margin-top:14px;
+      }
+      .benefit{
+        padding:10px 8px;
+        font-size:.82rem;
+        min-height:48px;
+        display:grid;
+        place-items:center;
+      }
+      .section{padding:22px 0}
+      .split{gap:16px}
+      .product{max-width:86%;margin:0 auto}
+      h2{
+        font-size:1.65rem;
+        margin-bottom:10px;
+      }
+      .list{
+        gap:10px;
+        margin:14px 0 16px;
+      }
+      .item{
+        grid-template-columns:24px 1fr;
+        gap:8px;
+        font-size:.93rem;
+      }
+      .check{width:21px;height:21px}
       .receive{grid-template-columns:1fr}
+      .receive-card{padding:12px}
+      .receive-card h3{font-size:.9rem}
+      .receive-card p{font-size:.88rem}
+      .notice{font-size:.84rem}
+      .final{padding:26px 0 34px}
       .btn{width:100%;font-size:.92rem}
     }
   </style>
@@ -340,7 +417,7 @@
         </div>
 
         <div class="hero-image">
-          <img src="assets/oferta-chatgpt-lucrativo.png" alt="Oferta do curso ChatGPT Lucrativo por R$ 29,00" />
+          <img src="assets/oferta-chatgpt-lucrativo.png" alt="Oferta do curso ChatGPT Lucrativo por R$ 29,00" decoding="async" />
         </div>
       </div>
 
@@ -357,7 +434,7 @@
     <section class="section">
       <div class="wrap split">
         <div class="product">
-          <img src="assets/mockup-chatgpt-lucrativo.png" alt="Mockup do curso ChatGPT Lucrativo" />
+          <img src="assets/mockup-chatgpt-lucrativo.png" alt="Mockup do curso ChatGPT Lucrativo" loading="lazy" decoding="async" />
         </div>
 
         <div class="content-panel">
