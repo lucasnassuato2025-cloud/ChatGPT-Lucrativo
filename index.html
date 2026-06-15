@@ -83,6 +83,13 @@
       font-weight:900;
       white-space:nowrap;
     }
+    .nav-price{
+      color:var(--green);
+      font-size:.9rem;
+      font-weight:900;
+      text-transform:uppercase;
+      white-space:nowrap;
+    }
     .hero{padding:40px 0 28px}
     .hero-grid{
       display:grid;
@@ -244,6 +251,29 @@
       border-top:1px solid var(--line);
       padding-top:16px;
     }
+    .receive{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+    .receive-card{
+      border:1px solid var(--line);
+      border-radius:8px;
+      background:rgba(25,242,106,.08);
+      padding:14px;
+    }
+    .receive-card h3{
+      color:var(--green);
+      font-size:.98rem;
+      line-height:1.2;
+      margin-bottom:8px;
+      text-transform:uppercase;
+    }
+    .receive-card p{
+      color:#dcefe3;
+      font-size:.92rem;
+    }
     .final{
       text-align:center;
       padding:44px 0 52px;
@@ -272,9 +302,10 @@
     @media (max-width:560px){
       .wrap{width:min(100% - 22px,1120px)}
       .nav{align-items:flex-start}
-      .mini-offer{font-size:.78rem;padding:8px 10px}
+      .nav-price{font-size:.78rem}
       .price-card,.content-panel,.final-box{padding:18px}
       .benefits{grid-template-columns:1fr}
+      .receive{grid-template-columns:1fr}
       .btn{width:100%;font-size:.92rem}
     }
   </style>
@@ -283,7 +314,7 @@
   <header class="topbar">
     <div class="wrap nav">
       <div class="brand">ChatGPT <span>Lucrativo</span></div>
-      <a class="mini-offer buy-button" href="https://pay.cakto.com.br/hrf9msg_927824">Comprar por R$ 29,00</a>
+      <div class="nav-price">Promocao de Copa: R$ 29,00</div>
     </div>
   </header>
 
@@ -340,7 +371,25 @@
             <div class="item"><span class="check">&#10003;</span><span>Conhecer possibilidades de renda online com IA, sem promessa de resultado garantido.</span></div>
           </div>
 
-          <a class="btn buy-button" href="https://pay.cakto.com.br/hrf9msg_927824">Garantir minha vaga por R$ 29,00</a>
+          <h2>O que voce <span>recebe</span></h2>
+          <div class="receive">
+            <div class="receive-card">
+              <h3>Apostila completa</h3>
+              <p>7 modulos com objetivos, exemplos reais, exercicios, checklists, resumos e proximos passos.</p>
+            </div>
+            <div class="receive-card">
+              <h3>Pacote de bonus</h3>
+              <p>Mais de 2.000 prompts prontos, organizados por tema, alem de um plano de estudo de 4 semanas.</p>
+            </div>
+            <div class="receive-card">
+              <h3>Material de marketing</h3>
+              <p>Pagina de vendas, roteiros de aulas e prompts de imagens para divulgar projetos com IA.</p>
+            </div>
+            <div class="receive-card">
+              <h3>Certificado</h3>
+              <p>Certificado de conclusao em layout profissional, com campos para nome, data e assinatura.</p>
+            </div>
+          </div>
 
           <p class="notice">Aviso: este curso e educacional. Resultados dependem da dedicacao, aplicacao pratica e contexto de cada aluno.</p>
         </div>
